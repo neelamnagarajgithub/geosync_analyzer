@@ -27,4 +27,4 @@ six==1.16.0
 tzdata==2024.2
 urllib3==2.2.3
 zipp==3.20.2
-earthengine-api==0.1.333
+earthengine-api
