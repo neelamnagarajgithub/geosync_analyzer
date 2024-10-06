@@ -1,12 +1,18 @@
 import ee
-import google.auth
 import sys
 import json
+import os
+from google.oauth2 import service_account
 
 def main(latitude, longitude):
-    credentials, project = google.auth.default()
-    ee.Initialize(credentials, project=project)
+    SCOPES = ['https://www.googleapis.com/auth/earthengine']
 
+    credentials_path = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
+ 
+    credentials = service_account.Credentials.from_service_account_file(
+    credentials_path, scopes=SCOPES)
+   
+    ee.Initialize(credentials)
     point = ee.Geometry.Point([longitude, latitude])
 
     landsatSR = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2") \

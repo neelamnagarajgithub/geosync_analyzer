@@ -33,6 +33,7 @@ const bandvalues = async (req,res)=>{
 
                 res.status(200).json(parsedResult);
             } catch (error) {
+                console.error(`Error parsing response from Python script: ${error}`);
                 res.status(500).send('Error parsing response from Python script');
             }
         }

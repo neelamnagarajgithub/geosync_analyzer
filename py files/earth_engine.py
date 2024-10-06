@@ -14,7 +14,6 @@ def main(latitude, longitude):
  
     credentials = service_account.Credentials.from_service_account_file(
     credentials_path, scopes=SCOPES)
-    
    
     ee.Initialize(credentials)
 
