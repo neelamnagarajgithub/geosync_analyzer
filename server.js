@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(morgan('dev'))
 
 app.use(cors({
-  origin:["http://localhost:3000","https://geosync-ruby.vercel.app"],
+  origin:["http://localhost:3000","https://geosync-ruby.vercel.app","https://geosync-ruby.vercel.app/map"],
   methods:['GET','POST'],
   credentials:true,
 }))
