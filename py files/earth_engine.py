@@ -10,10 +10,10 @@ def main(latitude, longitude):
 
     SCOPES = ['https://www.googleapis.com/auth/earthengine']
 
-    credentials_path = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
+    # credentials_path = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
  
     credentials = service_account.Credentials.from_service_account_file(
-    credentials_path, scopes=SCOPES)
+    'privatekey.json', scopes=SCOPES)
    
     ee.Initialize(credentials)
 
